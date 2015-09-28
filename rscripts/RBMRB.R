@@ -32,6 +32,7 @@ fetchBMRB<-function(bmrbID,data=NA){
 }
 
 hsqc_HN<-function(bmrbID,data=NA){
+  #function to create hsqc data set by selection only H and N chemial shifts
   r<-fetchBMRB(bmrbID)
   shiftH=subset(r,Atm=="H")
   shiftN=subset(r,Atm=="N")
@@ -46,7 +47,9 @@ hsqc_HN<-function(bmrbID,data=NA){
   return(data)
 }
 
+#Example 1: fetch bmrb chemical shist table for a given bmrb entry
 r<-fetchBMRB(15076)
+# multiple entries may be added to same data frame
 r<-fetchBMRB(15077,r)
 r<-fetchBMRB(15078,r)
 
@@ -54,38 +57,11 @@ r<-fetchBMRB(15078,r)
 r$AtmId=NA
 # grepl is equal to whilecard like C* or H* or N*
 r$AtmId<-ifelse(grepl("C",r$Atm),"C",ifelse(grepl("H",r$Atm),"H",ifelse(grepl("N",r$Atm),"N",NA)))
-# plotN=ggplot(subset(r,AtmId=="N"))+
-#   facet_wrap(~Res,scales='free')+
-#   geom_density(aes(x=CS,color=as.character(BMRBId)))
-# plotN
-# plotC=ggplot(subset(r,AtmId=="C"))+
-#   facet_wrap(~Res,scales='free')+
-#   geom_density(aes(x=CS,color=as.character(BMRBId)))
-# plotC
-# plotH=ggplot(subset(r,AtmId=="H"))+
-#   facet_wrap(~Res,scales='free')+
-#   geom_density(aes(x=CS,color=as.character(BMRBId)))
-# plotH
+
+# plotting carbon chemical shifts for each residue type
 plotC=ggplot(subset(r,AtmId=="C"))+
   facet_wrap(~Res,scales='free_y')+
-  geom_point(aes(x=CS,y=resId,shape=Atm,color=as.character(BMRBId)))
-plotC
-plotH=ggplot(subset(r,AtmId=="H"))+
-  facet_wrap(~Res,scales='free_y')+
-  geom_point(aes(x=CS,y=resId,shape=Atm,color=as.character(BMRBId)))
-plotH
-plotN=ggplot(subset(r,AtmId=="N"))+
-  facet_wrap(~Res,scales='free_y')+
-  geom_point(aes(x=CS,y=resId,shape=Atm,color=as.character(BMRBId)))
-plotN
-
-
-
-p<-hsqc_HN(15076)
-p<-hsqc_HN(15077,p)
-p<-hsqc_HN(15078,p)
-hsqcplot=ggplot(p)+
-  geom_point(aes(x=H,y=N,color=as.character(BMRBId)),size=5)+
+  geom_point(aes(x=CS,y=resId,shape=Atm,color=as.character(BMRBId)))+
   theme(panel.background = element_blank(),
         text = element_text(color='black'),
         axis.text.x=element_text(color='black',angle=90,hjust=1,vjust=0.5),
@@ -94,11 +70,61 @@ hsqcplot=ggplot(p)+
         panel.grid.minor = element_line(colour = "gray"),
         panel.border =element_rect(colour = "black",fill=NA),
         legend.position='bottom');
-  #scale_shape_manual(values=unique(as.character(hsqcHN$resId)))
+plotC
+# plotting proton chemical shifts for each residue type
+plotH=ggplot(subset(r,AtmId=="H"))+
+  facet_wrap(~Res,scales='free_y')+
+  geom_point(aes(x=CS,y=resId,shape=Atm,color=as.character(BMRBId)))+
+  theme(panel.background = element_blank(),
+        text = element_text(color='black'),
+        axis.text.x=element_text(color='black',angle=90,hjust=1,vjust=0.5),
+        axis.text=element_text(color='black'),
+        panel.grid.major = element_line(colour = "gray"),
+        panel.grid.minor = element_line(colour = "gray"),
+        panel.border =element_rect(colour = "black",fill=NA),
+        legend.position='bottom');
+plotH
+
+# plotting nitrogen chemical shifts for each residue type
+plotN=ggplot(subset(r,AtmId=="N"))+
+  facet_wrap(~Res,scales='free_y')+
+  geom_point(aes(x=CS,y=resId,shape=Atm,color=as.character(BMRBId)))+
+  theme(panel.background = element_blank(),
+        text = element_text(color='black'),
+        axis.text.x=element_text(color='black',angle=90,hjust=1,vjust=0.5),
+        axis.text=element_text(color='black'),
+        panel.grid.major = element_line(colour = "gray"),
+        panel.grid.minor = element_line(colour = "gray"),
+        panel.border =element_rect(colour = "black",fill=NA),
+        legend.position='bottom');
+plotN
+
+
+#Example 2: HSQC(H-N) spectra
+
+# data can be directly fectched from BMRB
+p<-hsqc_HN(15076)
+# multiple entries can be loaded into the same data frame
+p<-hsqc_HN(15077,p)
+p<-hsqc_HN(15078,p)
+p<-hsqc_HN(15953,p)
+p<-hsqc_HN(16847,p)
+#hsqc spectrum
+hsqcplot=ggplot(p)+
+  geom_text(aes(x=H,y=N,color=as.character(BMRBId),label=as.character(resId)),alpha=0.5)+
+  #stat_density2d(aes(x=H,y=N,color=as.character(resId)),h=0.5,alpha=1.0)+
+  geom_point(aes(x=H,y=N,shape=Res.x),alpha=0.3,size=3)+
+  scale_shape_manual(values = 0:20)+
+  theme(panel.background = element_blank(),
+        text = element_text(color='black'),
+        axis.text.x=element_text(color='black',angle=90,hjust=1,vjust=0.5),
+        axis.text=element_text(color='black'),
+        panel.grid.major = element_line(colour = "gray"),
+        panel.grid.minor = element_line(colour = "gray"),
+        panel.border =element_rect(colour = "black",fill=NA),
+        legend.position='bottom');
 hsqcplot
 
-#If you want pdf un comment the following lines
-#pdf('example.pdf')
-#plot1
-#dev.off()
-
+d<-ggplot(p,aes(H,N,color=as.character(resId),shape=as.character(BMRBId)))+
+  geom_point()+geom_path(aes(group=as.character(resId)))
+d
