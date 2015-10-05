@@ -8,7 +8,6 @@ shinyServer(function(input, output) {
   
   # You can access the value of the widget with input$text, e.g.
   #output$value <- renderPrint({ input$bmrbId })
- 
   bid<-reactive({
     input$goButton
     bbid<-isolate(input$bmrbId)
@@ -61,6 +60,23 @@ shinyServer(function(input, output) {
   vis %>% bind_shiny("plot1")
   output$xxx <- renderText({ nrow(bid()) })
   
+  pdat<-hsqc_HN(isolate(input$bmrbId))
+  ranges2 <- reactiveValues(x = NULL, y = NULL)
+  output$plot2 <- renderPlot(ggplot(pdat,aes(H,N))+geom_point())
+  output$plot3 <- renderPlot(ggplot(pdat,aes(H,N))
+                             +geom_point()
+                             +coord_cartesian(xlim = ranges2$x, ylim = ranges2$y))
+  observe({
+    brush <- input$plot2_brush
+    if (!is.null(brush)) {
+      ranges2$x <- c(brush$xmin, brush$xmax)
+      ranges2$y <- c(brush$ymin, brush$ymax)
+      
+    } else {
+      ranges2$x <- NULL
+      ranges2$y <- NULL
+    }
+  })
   
 })
 

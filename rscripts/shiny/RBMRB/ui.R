@@ -13,8 +13,18 @@ shinyUI(fluidPage(
   ),
 
   fluidRow(
-    column(12,
-           ggvisOutput("plot1"))   
+    column(6,
+           ggvisOutput("plot1")),
+    column(3,
+           plotOutput("plot2",
+                      brush = brushOpts(
+                        id = "plot2_brush",
+                        resetOnNew = TRUE
+                      )
+           )),
+    column(3,
+           plotOutput("plot3"
+           ))
   )
   
 ))
