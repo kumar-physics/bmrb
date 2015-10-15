@@ -1,0 +1,11 @@
+Package: BMRB
+Title: Downloads chemical shift data from BMRB and generates R data frame for visualization
+Version: 0.0.0.9000
+Authors@R: person("Kumaran", "Baskaran", email = "kbaskaran2@wisc.edu", role = c("aut", "cre"))
+Description: This package fetches chemical shift data from www.bmrb.wisc.edu and converts into R data frame.It has two funcations namely fetchBMRB(<list of bmrb ids in csv>) and N15HSQC(<data frame from fetchBMRB>)
+Depends: R (>= 3.2.2)
+Imports:
+  reshape,
+  httr
+License: GPL-2
+LazyData: true

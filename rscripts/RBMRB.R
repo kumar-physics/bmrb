@@ -113,7 +113,7 @@ p<-hsqc_HN(16847,p)
 #hsqc spectrum
 hsqcplot=ggplot(p)+
   geom_text(aes(x=H,y=N,color=as.character(BMRBId),label=as.character(resId)),alpha=0.5,subset=.(BMRBId==15076))+
-  geom_text(aes(x=H,y=N,color=as.character(BMRBId),label=as.character(resId)),alpha=0.5)+
+  #geom_text(aes(x=H,y=N,color=as.character(BMRBId),label=as.character(resId)),alpha=0.5)+
   #stat_density2d(aes(x=H,y=N,color=as.character(resId)),h=0.5,alpha=1.0)+
   geom_point(aes(x=H,y=N,shape=Res.x,color=as.character(BMRBId)),alpha=0.3,size=3)+
   geom_line(aes(x=H,y=N,group=as.character(resId)),alpha=0.3,size=1)+
@@ -131,3 +131,7 @@ hsqcplot
 d<-ggplot(p,aes(H,N,color=as.character(resId),shape=as.character(BMRBId)))+
   geom_point()+geom_path(aes(group=as.character(resId)))
 d
+
+pdf('/kbaskaran/hsqc.pdf')
+hsqcplot
+dev.off()
