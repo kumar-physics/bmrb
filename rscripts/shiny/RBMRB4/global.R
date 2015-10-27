@@ -1,0 +1,523 @@
+amino_acids<-c(
+  "ALA"="ALA",
+  "ARG"="ARG",
+  "ASP"="ASP",
+  "ASN"="ASN",
+  "CYS"="CYS",
+  "GLU"="GLU",
+  "GLN"="GLN",
+  "GLY"="GLY",
+  "HIS"="HIS",
+  "ILE"="ILE",
+  "LEU"="LEU",
+  "LYS"="LYS",
+  "MET"="MET",
+  "PHE"="PHE",
+  "PRO"="PRO",
+  "SER"='SER',
+  "THR"="THR",
+  "TRP"="TRP",
+  "TYR"="TYR",
+  "VAL"="VAL"
+)
+all_atoms<-c(
+  "C"="C",
+  "CA"="CA",
+  "CB"="CB",
+  "CD"="CD",
+  "CD1"="CD1",
+  "CD2"="CD2",
+  "CE"="CE",
+  "CE1"="CE1",
+  "CE2"="CE2",
+  "CE3"="CE3",
+  "CG"="CG",
+  "CG1"="CG1",
+  "CG2"="CG2",
+  "CH2"="CH2",
+  "CZ"="CZ",
+  "CZ2"="CZ2",
+  "CZ3"="CZ3",
+  "H"="H",
+  "H1"="H1",
+  "H2"="H2",
+  "H3"="H3",
+  "HA"="HA",
+  "HA2"="HA2",
+  "HA3"="HA3",
+  "HB"="HB",
+  "HB1"="HB1",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HD1"="HD1",
+  "HD11"="HD11",
+  "HD12"="HD12",
+  "HD13"="HD13",
+  "HD2"="HD2",
+  "HD21"="HD21",
+  "HD22"="HD22",
+  "HD23"="HD23",
+  "HD3"="HD3",
+  "HE"="HE",
+  "HE1"="HE1",
+  "HE2"="HE2",
+  "HE21"="HE21",
+  "HE22"="HE22",
+  "HE3"="HE3",
+  "HG"="HG",
+  "HG1"="HG1",
+  "HG11"="HG11",
+  "HG12"="HG12",
+  "HG13"="HG13",
+  "HG2"="HG2",
+  "HG21"="HG21",
+  "HG22"="HG22",
+  "HG23"="HG23",
+  "HG3"="HG3",
+  "HH"="HH",
+  "HH11"="HH11",
+  "HH12"="HH12",
+  "HH2"="HH2",
+  "HH21"="HH21",
+  "HH22"="HH22",
+  "HZ"="HZ",
+  "HZ1"="HZ1",
+  "HZ2"="HZ2",
+  "HZ3"="HZ3",
+  "N"="N",
+  "ND1"="ND1",
+  "ND2"="ND2",
+  "NE"="NE",
+  "NE1"="NE1",
+  "NE2"="NE2",
+  "NH1"="NH1",
+  "NH2"="NH2",
+  "NZ"="NZ",
+  "O"="O",
+  "O'"="O'",
+  "O''"="O''",
+  "OD1"="OD1",
+  "OD2"="OD2",
+  "OE1"="OE1",
+  "OE2"="OE2",
+  "OG"="OG",
+  "OG1"="OG1",
+  "OH"="OH",
+  "SD"="SD",
+  "SG"="SG"
+)
+get_list<-function(xxx){
+  if (xxx=="ALA"){
+    list<-ala
+  } else if (xxx=="ARG"){
+    list<-arg
+  } else if (xxx=="ASP"){
+    list<-asp
+  } else if (xxx=="ASN"){
+    list<-asn
+  } else if (xxx=="CYS"){
+    list<-cys
+  } else if (xxx=="GLU"){
+    list<-glu
+  } else if (xxx=="GLN"){
+    list<-gln
+  } else if (xxx=="GLY"){
+    list<-gly
+  } else if (xxx=="HIS"){
+    list<-his
+  } else if (xxx=="ILE"){
+    list<-ile
+  } else if (xxx=="LEU"){
+    list<-leu
+  } else if (xxx=="LYS"){
+    list<-lys
+  } else if (xxx=="MET"){
+    list<-met
+  } else if (xxx=="PHE"){
+    list<-phe
+  } else if (xxx=="PRO"){
+    list<-pro
+  } else if (xxx=="SER"){
+    list<-ser
+  } else if (xxx=="THR"){
+    list<-thr
+  } else if (xxx=="TRP"){
+    list<-trp
+  } else if (xxx=="TYR"){
+    list<-tyr
+  } else {
+    list<-val
+  }
+  return(list)
+}
+
+ala<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "H1"="H1",
+  "HA"="HA",
+  "HB1"="HB1",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "H2"="H2",
+  "H3"="H3"
+)
+arg<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD"="CD",
+  "NE"="NE",
+  "CZ"="CZ",
+  "NH1"="NH1",
+  "NH2"="NH2",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG2"="HG2",
+  "HG3"="HG3",
+  "HD2"="HD2",
+  "HD3"="HD3",
+  "HE"="HE",
+  "HH11"="HH11",
+  "HH12"="HH12",
+  "HH21"="HH21",
+  "HH22"="HH22"
+)
+asp<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "OD1"="OD1",
+  "OD2"="OD2",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HD2"="HD2"
+)
+asn<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "OD1"="OD1",
+  "ND2"="ND2",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HD21"="HD21",
+  "HD22"="HD22"
+)
+cys<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "SG"="SG",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG"="HG"
+)
+glu<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD"="CD",
+  "OE1"="OE1",
+  "OE2"="OE2",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG2"="HG2",
+  "HG3"="HG3",
+  "HE2"="HE2"
+)
+gln<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD"="CD",
+  "OE1"="OE1",
+  "NE2"="NE2",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG2"="HG2",
+  "HG3"="HG3",
+  "HE21"="HE21",
+  "HE22"="HE22"
+)
+gly<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "H"="H",
+  "HA2"="HA2",
+  "HA3"="HA3"
+)
+his<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "ND1"="ND1",
+  "CD2"="CD2",
+  "CE1"="CE1",
+  "NE2"="NE2",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HD1"="HD1",
+  "HD2"="HD2",
+  "HE1"="HE1",
+  "HE2"="HE2"
+)
+ile<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG1"="CG1",
+  "CG2"="CG2",
+  "CD1"="CD1",
+  "H"="H",
+  "HA"="HA",
+  "HB"="HB",
+  "HG12"="HG12",
+  "HG13"="HG13",
+  "HG21"="HG21",
+  "HG22"="HG22",
+  "HG23"="HG23",
+  "HD11"="HD11",
+  "HD12"="HD12",
+  "HD13"="HD13"
+)
+leu<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD1"="CD1",
+  "CD2"="CD2",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG"="HG",
+  "HD11"="HD11",
+  "HD12"="HD12",
+  "HD13"="HD13",
+  "HD21"="HD21",
+  "HD22"="HD22",
+  "HD23"="HD23"
+)
+lys<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD"="CD",
+  "CE"="CE",
+  "NZ"="NZ",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG2"="HG2",
+  "HG3"="HG3",
+  "HD2"="HD2",
+  "HD3"="HD3",
+  "HE2"="HE2",
+  "HE3"="HE3",
+  "HZ1"="HZ1",
+  "HZ2"="HZ2",
+  "HZ3"="HZ3"
+)
+met<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "SD"="SD",
+  "CE"="CE",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG2"="HG2",
+  "HG3"="HG3",
+  "HE1"="HE1",
+  "HE2"="HE2",
+  "HE3"="HE3"
+)
+phe<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD1"="CD1",
+  "CD2"="CD2",
+  "CE1"="CE1",
+  "CE2"="CE2",
+  "CZ"="CZ",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HD1"="HD1",
+  "HD2"="HD2",
+  "HE1"="HE1",
+  "HE2"="HE2",
+  "HZ"="HZ"
+)
+pro<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD"="CD",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG2"="HG2",
+  "HG3"="HG3",
+  "HD2"="HD2",
+  "HD3"="HD3"
+)
+ser<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "OG"="OG",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HG"="HG"
+)
+thr<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "OG1"="OG1",
+  "CG2"="CG2",
+  "H"="H",
+  "HA"="HA",
+  "HB"="HB",
+  "HG1"="HG1",
+  "HG21"="HG21",
+  "HG22"="HG22",
+  "HG23"="HG23"
+)
+trp<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD1"="CD1",
+  "CD2"="CD2",
+  "NE1"="NE1",
+  "CE2"="CE2",
+  "CE3"="CE3",
+  "CZ2"="CZ2",
+  "CZ3"="CZ3",
+  "CH2"="CH2",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HD1"="HD1",
+  "HE1"="HE1",
+  "HE3"="HE3",
+  "HZ2"="HZ2",
+  "HZ3"="HZ3",
+  "HH2"="HH2"
+)
+tyr<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O"="O",
+  "CB"="CB",
+  "CG"="CG",
+  "CD1"="CD1",
+  "CD2"="CD2",
+  "CE1"="CE1",
+  "CE2"="CE2",
+  "CZ"="CZ",
+  "OH"="OH",
+  "H"="H",
+  "HA"="HA",
+  "HB2"="HB2",
+  "HB3"="HB3",
+  "HD1"="HD1",
+  "HD2"="HD2",
+  "HE1"="HE1",
+  "HE2"="HE2",
+  "HH"="HH"
+)
+val<-c(
+  "N"="N",
+  "CA"="CA",
+  "C"="C",
+  "O'"="O'",
+  "CB"="CB",
+  "CG1"="CG1",
+  "CG2"="CG2",
+  "H"="H",
+  "HA"="HA",
+  "HB"="HB",
+  "HG11"="HG11",
+  "HG12"="HG12",
+  "HG13"="HG13",
+  "HG21"="HG21",
+  "HG22"="HG22",
+  "HG23"="HG23",
+  "O''"="O''"
+)

@@ -2,7 +2,7 @@
 
 #'Downloads the chemical shift data from BMRB for a given BMRB entry/list of BMRB entries
 #'
-#'@param BMRBidlist sinlge BMRB ID / list of BMRB IDs in csv format
+#'@param BMRBidlist ==> sinlge BMRB ID / list of BMRB IDs in csv format
 #'@return all available chemical shift data in R data frame
 #'@examples
 #'df<-fetchBMRB('15060')
@@ -29,7 +29,7 @@ fetchBMRB<-function(BMRBidlist){
 
 #'Converts chemical shift data frame into H1-N15 HSQC data frame
 #'
-#'@param csdf chemical shift data frame from fetchBMRB
+#'@param csdf ==> chemical shift data frame from fetchBMRB
 #'@return 1H-N15 chemical shift list on the same row combined using comp index ID and bmrb ID
 #'@examples
 #'hsqc<-N15HSQC(df)
@@ -46,4 +46,14 @@ N15HSQC<-function(csdf){
   return(outdat)
 }
 
+#'Reads the full chemical shift csv frile from BMRB ftp site
+#'
+#'@param No parameter is needed
+#'@return list of all atom chemical shifts for all BMRB entries as a R data frame
+#'@examples
+#'df<-fetchallBMRB()
+fetchallBMRB<-function(){
+  outdat<-read.csv('http://www.bmrb.wisc.edu/ftp/pub/bmrb/relational_tables/nmr-star3.1/Atom_chem_shift.csv', header = T)
+  return(outdat)
+}
 
