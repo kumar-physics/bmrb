@@ -5,6 +5,7 @@ Created on Nov 5, 2015
 '''
 import sys
 sys.path.append('/home/kumaran/git/bmrb/python/Metabolomics/StarParser/parser/')
+#sys.path.append('/home/kumaran/python/')
 import meta
 from string import atoi,atof
 
@@ -219,7 +220,7 @@ class MetaParser(object):
 if __name__=="__main__":
     p=MetaParser()
     #p.checkEntry(150)
-    for i in range(0,12000):
+    for i in range(0,1100):
         try:
             if i!=124 :p.checkEntry(i)
         except IOError:
