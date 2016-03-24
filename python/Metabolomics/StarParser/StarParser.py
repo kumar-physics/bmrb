@@ -162,4 +162,8 @@ class MetaParser(object):
         
 if __name__=="__main__":
     p=MetaParser()
+<<<<<<< Updated upstream
     p.checkAll2()
+=======
+    p.checklist('/home/kumaran/share/bmrb/metab_under_assigned.txt')
+>>>>>>> Stashed changes

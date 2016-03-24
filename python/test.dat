@@ -1,0 +1,102 @@
+All Chemical Shifts,Entries,Proteins,9992
+All Chemical Shifts,Values,Proteins,7061320
+All Chemical Shifts,Entries,DNA,263
+All Chemical Shifts,Values,DNA,43434
+All Chemical Shifts,Entries,RNA,250
+All Chemical Shifts,Values,RNA,64864
+1H Chemical Shifts,Entries,Proteins,9696
+1H Chemical Shifts,Values,Proteins,3659623
+1H Chemical Shifts,Entries,DNA,259
+1H Chemical Shifts,Values,DNA,39866
+1H Chemical Shifts,Entries,RNA,249
+1H Chemical Shifts,Values,RNA,41019
+13C Chemical Shifts,Entries,Proteins,7103
+13C Chemical Shifts,Values,Proteins,2600862
+13C Chemical Shifts,Entries,DNA,39
+13C Chemical Shifts,Values,DNA,2654
+13C Chemical Shifts,Entries,RNA,155
+13C Chemical Shifts,Values,RNA,20095
+15N Chemical Shifts,Entries,Proteins,7400
+15N Chemical Shifts,Values,Proteins,804204
+15N Chemical Shifts,Entries,DNA,6
+15N Chemical Shifts,Values,DNA,79
+15N Chemical Shifts,Entries,RNA,106
+15N Chemical Shifts,Values,RNA,3310
+31P Chemical Shifts,Entries,Proteins,0
+31P Chemical Shifts,Values,Proteins,0
+31P Chemical Shifts,Entries,DNA,52
+31P Chemical Shifts,Values,DNA,860
+31P Chemical Shifts,Entries,RNA,51
+31P Chemical Shifts,Values,RNA,683
+Other Chemical Shifts,Entries,Proteins,0
+Other Chemical Shifts,Values,Proteins,0
+Other Chemical Shifts,Entries,DNA,0
+Other Chemical Shifts,Values,DNA,0
+Other Chemical Shifts,Entries,RNA,0
+Other Chemical Shifts,Values,RNA,0
+Coupling Constants,Entries,Proteins,350
+Coupling Constants,Values,Proteins,27510
+Coupling Constants,Entries,DNA,5
+Coupling Constants,Values,DNA,131
+Coupling Constants,Entries,RNA,0
+Coupling Constants,Values,RNA,0
+Dipolar Couplings ,Entries,Proteins,116
+Dipolar Couplings ,Values,Proteins,13613
+Dipolar Couplings ,Entries,DNA,0
+Dipolar Couplings ,Values,DNA,0
+Dipolar Couplings ,Entries,RNA,0
+Dipolar Couplings ,Values,RNA,0
+T1 Values,Entries,Proteins,227
+T1 Values,Values,Proteins,34150
+T1 Values,Entries,DNA,0
+T1 Values,Values,DNA,0
+T1 Values,Entries,RNA,0
+T1 Values,Values,RNA,0
+T2 Values,Entries,Proteins,224
+T2 Values,Values,Proteins,35829
+T2 Values,Entries,DNA,0
+T2 Values,Values,DNA,0
+T2 Values,Entries,RNA,0
+T2 Values,Values,RNA,0
+Heteronuclear NOE Values,Entries,Proteins,230
+Heteronuclear NOE Values,Values,Proteins,33496
+Heteronuclear NOE Values,Entries,DNA,0
+Heteronuclear NOE Values,Values,DNA,0
+Heteronuclear NOE Values,Entries,RNA,0
+Heteronuclear NOE Values,Values,RNA,0
+S2 Values,Entries,Proteins,81
+S2 Values,Values,Proteins,13402
+S2 Values,Entries,DNA,0
+S2 Values,Values,DNA,0
+S2 Values,Entries,RNA,0
+S2 Values,Values,RNA,0
+H-Exchange Rates,Entries,Proteins,14
+H-Exchange Rates,Values,Proteins,1044
+H-Exchange Rates,Entries,DNA,0
+H-Exchange Rates,Values,DNA,0
+H-Exchange Rates,Entries,RNA,0
+H-Exchange Rates,Values,RNA,0
+H-Exchange Protection Factors,Entries,Proteins,10
+H-Exchange Protection Factors,Values,Proteins,727
+H-Exchange Protection Factors,Entries,DNA,0
+H-Exchange Protection Factors,Values,DNA,0
+H-Exchange Protection Factors,Entries,RNA,0
+H-Exchange Protection Factors,Values,RNA,0
+D/H-Fractionation Factors,Entries,Proteins,0
+D/H-Fractionation Factors,Values,Proteins,0
+D/H-Fractionation Factors,Entries,DNA,0
+D/H-Fractionation Factors,Values,DNA,0
+D/H-Fractionation Factors,Entries,RNA,0
+D/H-Fractionation Factors,Values,RNA,0
+pKa Values,Entries,Proteins,0
+pKa Values,Values,Proteins,0
+pKa Values,Entries,DNA,0
+pKa Values,Values,DNA,0
+pKa Values,Entries,RNA,0
+pKa Values,Values,RNA,0
+3D Structure Entries,Entries,Proteins,1
+3D Structure Entries,Values,Proteins,0
+3D Structure Entries,Entries,DNA,0
+3D Structure Entries,Values,DNA,0
+3D Structure Entries,Entries,RNA,0
+3D Structure Entries,Values,RNA,0
