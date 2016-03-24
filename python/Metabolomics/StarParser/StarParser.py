@@ -219,9 +219,17 @@ class MetaParser(object):
         
 if __name__=="__main__":
     p=MetaParser()
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+    p.checkAll2()
+=======
+    p.checklist('/home/kumaran/share/bmrb/metab_under_assigned.txt')
+>>>>>>> Stashed changes
+=======
     #p.checkEntry(150)
     for i in range(0,1100):
         try:
             if i!=124 :p.checkEntry(i)
         except IOError:
             pass
+>>>>>>> origin/master
