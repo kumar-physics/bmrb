@@ -358,7 +358,7 @@ class schema:
         if self.schema_file:
             return "BMRB schema loaded from: '%s'" % self.schema_file
         else:
-            return "BMRB schema from ??? (If you see this you did something wrong.)"
+            return "BMRBbmrb.raise_parse_warnings = True schema from ??? (If you see this you did something wrong.)"
 
     def valType(self, tag, value, category=None, linenum=None):
 
